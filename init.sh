@@ -1,7 +1,13 @@
 #!/bin/bash
 
-# Specify your Flutter project name
-project_name="your_flutter_project"
+# Check if a project name is provided
+if [ -z "$1" ]; then
+  echo "Usage: $0 <project_name>"
+  exit 1
+fi
+
+# Set the provided project name
+project_name="$1"
 
 # Create the Flutter project
 flutter create $project_name
